@@ -1,0 +1,49 @@
+c:\users\volga\documents\visual studio 2015\Projects\YT2MP3\YT2MP3\bin\Debug\YT2MP3.exe.config
+c:\users\volga\documents\visual studio 2015\Projects\YT2MP3\YT2MP3\obj\Debug\YT2MP3.csprojResolveAssemblyReference.cache
+c:\users\volga\documents\visual studio 2015\Projects\YT2MP3\YT2MP3\obj\Debug\YT2MP3.YTMP3.resources
+c:\users\volga\documents\visual studio 2015\Projects\YT2MP3\YT2MP3\obj\Debug\YT2MP3.Properties.Resources.resources
+c:\users\volga\documents\visual studio 2015\Projects\YT2MP3\YT2MP3\obj\Debug\YT2MP3.csproj.GenerateResource.Cache
+c:\users\volga\documents\visual studio 2015\Projects\YT2MP3\YT2MP3\bin\Debug\YT2MP3.exe
+c:\users\volga\documents\visual studio 2015\Projects\YT2MP3\YT2MP3\bin\Debug\YT2MP3.pdb
+c:\users\volga\documents\visual studio 2015\Projects\YT2MP3\YT2MP3\obj\Debug\YT2MP3.exe
+c:\users\volga\documents\visual studio 2015\Projects\YT2MP3\YT2MP3\obj\Debug\YT2MP3.pdb
+C:\Users\Volga\Documents\Visual Studio 2015\Projects\YT2MP3\YT2MP3\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Volga\Documents\Visual Studio 2015\Projects\YT2MP3\YT2MP3\bin\Debug\YoutubeExtractor.dll
+C:\Users\Volga\Documents\Visual Studio 2015\Projects\YT2MP3\YT2MP3\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Volga\Documents\Visual Studio 2015\Projects\YT2MP3\YT2MP3\bin\Debug\YoutubeExtractor.xml
+C:\Users\Volga\Documents\Visual Studio 2015\Projects\YT2MP3\YT2MP3\bin\Debug\MediaToolkit.dll
+D:\GitHub\YT2MP3\YT2MP3\bin\Debug\YT2MP3.exe.config
+D:\GitHub\YT2MP3\YT2MP3\obj\Debug\YT2MP3.exe
+D:\GitHub\YT2MP3\YT2MP3\obj\Debug\YT2MP3.pdb
+D:\GitHub\YT2MP3_local\YT2MP3\bin\Debug\YT2MP3.exe.config
+D:\GitHub\YT2MP3_local\YT2MP3\obj\Debug\YT2MP3.exe
+D:\GitHub\YT2MP3_local\YT2MP3\obj\Debug\YT2MP3.pdb
+D:\GitHub\yt2mp3\YT2MP3\bin\Debug\YT2MP3.exe
+D:\GitHub\yt2mp3\YT2MP3\bin\Debug\YT2MP3.pdb
+D:\GitHub\yt2mp3\YT2MP3\bin\Debug\MediaToolkit.dll
+D:\GitHub\yt2mp3\YT2MP3\bin\Debug\Newtonsoft.Json.dll
+D:\GitHub\yt2mp3\YT2MP3\bin\Debug\YoutubeExtractor.dll
+D:\GitHub\yt2mp3\YT2MP3\bin\Debug\Newtonsoft.Json.xml
+D:\GitHub\yt2mp3\YT2MP3\bin\Debug\YoutubeExtractor.xml
+D:\GitHub\yt2mp3\YT2MP3\obj\Debug\YT2MP3.g.resources
+D:\GitHub\yt2mp3\YT2MP3\obj\Debug\YT2MP3.YTMP3.resources
+D:\GitHub\yt2mp3\YT2MP3\obj\Debug\YT2MP3.Properties.Resources.resources
+D:\GitHub\yt2mp3\YT2MP3\obj\Debug\YT2MP3.csproj.GenerateResource.Cache
+D:\GitHub\yt2mp3\YT2MP3\obj\Debug\YT2MP3.csprojResolveAssemblyReference.cache
+E:\GitHub\yt2mp3\YT2MP3\bin\Debug\YT2MP3.exe.config
+E:\GitHub\yt2mp3\YT2MP3\obj\Debug\YT2MP3.exe
+E:\GitHub\yt2mp3\YT2MP3\obj\Debug\YT2MP3.pdb
+C:\Users\Volga\Desktop\yt2mp3\YT2MP3\bin\Debug\YT2MP3.exe.config
+C:\Users\Volga\Desktop\yt2mp3\YT2MP3\bin\Debug\YT2MP3.exe
+C:\Users\Volga\Desktop\yt2mp3\YT2MP3\bin\Debug\YT2MP3.pdb
+C:\Users\Volga\Desktop\yt2mp3\YT2MP3\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Volga\Desktop\yt2mp3\YT2MP3\bin\Debug\YoutubeExtractor.dll
+C:\Users\Volga\Desktop\yt2mp3\YT2MP3\bin\Debug\YoutubeSearch.dll
+C:\Users\Volga\Desktop\yt2mp3\YT2MP3\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Volga\Desktop\yt2mp3\YT2MP3\bin\Debug\YoutubeExtractor.xml
+C:\Users\Volga\Desktop\yt2mp3\YT2MP3\obj\Debug\YT2MP3.g.resources
+C:\Users\Volga\Desktop\yt2mp3\YT2MP3\obj\Debug\YT2MP3.YTMP3.resources
+C:\Users\Volga\Desktop\yt2mp3\YT2MP3\obj\Debug\YT2MP3.Properties.Resources.resources
+C:\Users\Volga\Desktop\yt2mp3\YT2MP3\obj\Debug\YT2MP3.csproj.GenerateResource.Cache
+C:\Users\Volga\Desktop\yt2mp3\YT2MP3\obj\Debug\YT2MP3.exe
+C:\Users\Volga\Desktop\yt2mp3\YT2MP3\obj\Debug\YT2MP3.pdb
