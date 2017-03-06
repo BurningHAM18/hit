@@ -43,13 +43,14 @@
             this.tabs = new System.Windows.Forms.TabControl();
             this.Download = new System.Windows.Forms.TabPage();
             this.Search = new System.Windows.Forms.TabPage();
-            this.tosearch = new System.Windows.Forms.TextBox();
-            this.s_button = new System.Windows.Forms.Button();
-            this.risultati = new System.Windows.Forms.ListBox();
-            this.c_butt = new System.Windows.Forms.Button();
-            this.add_butt = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.add_butt = new System.Windows.Forms.Button();
+            this.c_butt = new System.Windows.Forms.Button();
+            this.risultati = new System.Windows.Forms.ListBox();
+            this.s_button = new System.Windows.Forms.Button();
+            this.tosearch = new System.Windows.Forms.TextBox();
+            this.Player = new System.Windows.Forms.TabPage();
             this.tabs.SuspendLayout();
             this.Download.SuspendLayout();
             this.Search.SuspendLayout();
@@ -174,6 +175,7 @@
             // 
             this.tabs.Controls.Add(this.Download);
             this.tabs.Controls.Add(this.Search);
+            this.tabs.Controls.Add(this.Player);
             this.tabs.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabs.Location = new System.Drawing.Point(0, 0);
             this.tabs.Name = "tabs";
@@ -219,43 +221,24 @@
             this.Search.Text = "Search";
             this.Search.UseVisualStyleBackColor = true;
             // 
-            // tosearch
+            // linkLabel2
             // 
-            this.tosearch.Location = new System.Drawing.Point(9, 8);
-            this.tosearch.Name = "tosearch";
-            this.tosearch.Size = new System.Drawing.Size(649, 20);
-            this.tosearch.TabIndex = 0;
-            this.tosearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.enterpressed);
+            this.linkLabel2.AutoSize = true;
+            this.linkLabel2.Location = new System.Drawing.Point(524, 390);
+            this.linkLabel2.Name = "linkLabel2";
+            this.linkLabel2.Size = new System.Drawing.Size(112, 13);
+            this.linkLabel2.TabIndex = 6;
+            this.linkLabel2.TabStop = true;
+            this.linkLabel2.Text = "Search idea by cttynul";
+            this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
             // 
-            // s_button
+            // panel1
             // 
-            this.s_button.Location = new System.Drawing.Point(664, 7);
-            this.s_button.Name = "s_button";
-            this.s_button.Size = new System.Drawing.Size(75, 23);
-            this.s_button.TabIndex = 1;
-            this.s_button.Text = "Search";
-            this.s_button.UseVisualStyleBackColor = true;
-            this.s_button.Click += new System.EventHandler(this.s_button_Click);
-            // 
-            // risultati
-            // 
-            this.risultati.FormattingEnabled = true;
-            this.risultati.Location = new System.Drawing.Point(9, 35);
-            this.risultati.Name = "risultati";
-            this.risultati.Size = new System.Drawing.Size(396, 368);
-            this.risultati.TabIndex = 2;
-            this.risultati.SelectedIndexChanged += new System.EventHandler(this.mostrathumbnail);
-            this.risultati.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.mouseDoubleClick);
-            // 
-            // c_butt
-            // 
-            this.c_butt.Location = new System.Drawing.Point(416, 351);
-            this.c_butt.Name = "c_butt";
-            this.c_butt.Size = new System.Drawing.Size(323, 23);
-            this.c_butt.TabIndex = 3;
-            this.c_butt.Text = "Clear";
-            this.c_butt.UseVisualStyleBackColor = true;
-            this.c_butt.Click += new System.EventHandler(this.c_butt_Click);
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Location = new System.Drawing.Point(416, 35);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(323, 262);
+            this.panel1.TabIndex = 5;
             // 
             // add_butt
             // 
@@ -267,24 +250,53 @@
             this.add_butt.UseVisualStyleBackColor = true;
             this.add_butt.Click += new System.EventHandler(this.add_butt_Click);
             // 
-            // panel1
+            // c_butt
             // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Location = new System.Drawing.Point(416, 35);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(323, 262);
-            this.panel1.TabIndex = 5;
+            this.c_butt.Location = new System.Drawing.Point(416, 351);
+            this.c_butt.Name = "c_butt";
+            this.c_butt.Size = new System.Drawing.Size(323, 23);
+            this.c_butt.TabIndex = 3;
+            this.c_butt.Text = "Clear";
+            this.c_butt.UseVisualStyleBackColor = true;
+            this.c_butt.Click += new System.EventHandler(this.c_butt_Click);
             // 
-            // linkLabel2
+            // risultati
             // 
-            this.linkLabel2.AutoSize = true;
-            this.linkLabel2.Location = new System.Drawing.Point(524, 390);
-            this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(112, 13);
-            this.linkLabel2.TabIndex = 6;
-            this.linkLabel2.TabStop = true;
-            this.linkLabel2.Text = "Search idea by cttynul";
-            this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
+            this.risultati.FormattingEnabled = true;
+            this.risultati.Location = new System.Drawing.Point(9, 35);
+            this.risultati.Name = "risultati";
+            this.risultati.Size = new System.Drawing.Size(396, 368);
+            this.risultati.TabIndex = 2;
+            this.risultati.SelectedIndexChanged += new System.EventHandler(this.mostrathumbnail);
+            this.risultati.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.mouseDoubleClick);
+            // 
+            // s_button
+            // 
+            this.s_button.Location = new System.Drawing.Point(664, 7);
+            this.s_button.Name = "s_button";
+            this.s_button.Size = new System.Drawing.Size(75, 23);
+            this.s_button.TabIndex = 1;
+            this.s_button.Text = "Search";
+            this.s_button.UseVisualStyleBackColor = true;
+            this.s_button.Click += new System.EventHandler(this.s_button_Click);
+            // 
+            // tosearch
+            // 
+            this.tosearch.Location = new System.Drawing.Point(9, 8);
+            this.tosearch.Name = "tosearch";
+            this.tosearch.Size = new System.Drawing.Size(649, 20);
+            this.tosearch.TabIndex = 0;
+            this.tosearch.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.enterpressed);
+            // 
+            // Player
+            // 
+            this.Player.Location = new System.Drawing.Point(4, 22);
+            this.Player.Name = "Player";
+            this.Player.Padding = new System.Windows.Forms.Padding(3);
+            this.Player.Size = new System.Drawing.Size(747, 413);
+            this.Player.TabIndex = 2;
+            this.Player.Text = "Player";
+            this.Player.UseVisualStyleBackColor = true;
             // 
             // YTMP3
             // 
@@ -329,6 +341,7 @@
         private System.Windows.Forms.ListBox risultati;
         private System.Windows.Forms.Button s_button;
         private System.Windows.Forms.TextBox tosearch;
+        private System.Windows.Forms.TabPage Player;
     }
 }
 

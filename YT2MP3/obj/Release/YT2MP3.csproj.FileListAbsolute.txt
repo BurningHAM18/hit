@@ -1,0 +1,15 @@
+E:\GitHub\yt2mp3\YT2MP3\bin\Release\YT2MP3.exe.config
+E:\GitHub\yt2mp3\YT2MP3\bin\Release\YT2MP3.exe
+E:\GitHub\yt2mp3\YT2MP3\bin\Release\YT2MP3.pdb
+E:\GitHub\yt2mp3\YT2MP3\bin\Release\Newtonsoft.Json.dll
+E:\GitHub\yt2mp3\YT2MP3\bin\Release\YoutubeExtractor.dll
+E:\GitHub\yt2mp3\YT2MP3\bin\Release\YoutubeSearch.dll
+E:\GitHub\yt2mp3\YT2MP3\bin\Release\Newtonsoft.Json.xml
+E:\GitHub\yt2mp3\YT2MP3\bin\Release\YoutubeExtractor.xml
+E:\GitHub\yt2mp3\YT2MP3\obj\Release\YT2MP3.csprojResolveAssemblyReference.cache
+E:\GitHub\yt2mp3\YT2MP3\obj\Release\YT2MP3.g.resources
+E:\GitHub\yt2mp3\YT2MP3\obj\Release\YT2MP3.YTMP3.resources
+E:\GitHub\yt2mp3\YT2MP3\obj\Release\YT2MP3.Properties.Resources.resources
+E:\GitHub\yt2mp3\YT2MP3\obj\Release\YT2MP3.csproj.GenerateResource.Cache
+E:\GitHub\yt2mp3\YT2MP3\obj\Release\YT2MP3.exe
+E:\GitHub\yt2mp3\YT2MP3\obj\Release\YT2MP3.pdb
