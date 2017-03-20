@@ -13,3 +13,4 @@ E:\GitHub\yt2mp3\YT2MP3\obj\Release\YT2MP3.Properties.Resources.resources
 E:\GitHub\yt2mp3\YT2MP3\obj\Release\YT2MP3.csproj.GenerateResource.Cache
 E:\GitHub\yt2mp3\YT2MP3\obj\Release\YT2MP3.exe
 E:\GitHub\yt2mp3\YT2MP3\obj\Release\YT2MP3.pdb
+E:\GitHub\yt2mp3\YT2MP3\bin\Release\_hit_.exe.config

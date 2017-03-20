@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("YT2MP3")]
+[assembly: AssemblyTitle("_hit_")]
 [assembly: AssemblyDescription("Mp3 Downloader From Youtube")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("BurningHAM18")]
-[assembly: AssemblyProduct("YT2MP3")]
+[assembly: AssemblyProduct("_hit_")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

@@ -1,0 +1,14 @@
+E:\GitHub\yt2mp3\YT2MP3\bin\Debug\_hit_.exe.config
+E:\GitHub\yt2mp3\YT2MP3\bin\Debug\_hit_.exe
+E:\GitHub\yt2mp3\YT2MP3\bin\Debug\_hit_.pdb
+E:\GitHub\yt2mp3\YT2MP3\bin\Debug\Newtonsoft.Json.dll
+E:\GitHub\yt2mp3\YT2MP3\bin\Debug\YoutubeExtractor.dll
+E:\GitHub\yt2mp3\YT2MP3\bin\Debug\YoutubeSearch.dll
+E:\GitHub\yt2mp3\YT2MP3\bin\Debug\Newtonsoft.Json.xml
+E:\GitHub\yt2mp3\YT2MP3\bin\Debug\YoutubeExtractor.xml
+E:\GitHub\yt2mp3\YT2MP3\obj\Debug\_hit_.g.resources
+E:\GitHub\yt2mp3\YT2MP3\obj\Debug\YT2MP3.YTMP3.resources
+E:\GitHub\yt2mp3\YT2MP3\obj\Debug\_hit_.Properties.Resources.resources
+E:\GitHub\yt2mp3\YT2MP3\obj\Debug\hit.csproj.GenerateResource.Cache
+E:\GitHub\yt2mp3\YT2MP3\obj\Debug\_hit_.exe
+E:\GitHub\yt2mp3\YT2MP3\obj\Debug\_hit_.pdb
