@@ -22,7 +22,7 @@ namespace YT2MP3
         private static int version = 2;
         private static ProgressBar p;
         private int count = 0;
-
+        
         public YTMP3()
         {
             InitializeComponent();
@@ -185,7 +185,15 @@ namespace YT2MP3
                         VideoInfo video = videoInfos.First(info => info.VideoType == VideoType.Mp4); // youtube gives always mp4
 
                         YoutubeVideo add = new YoutubeVideo(video.Title, target);
-                        URLS.Items.Add(add);
+                        bool marker = false;
+                        if (URLS.Items.Count != 0)
+                        {
+                            foreach (YoutubeVideo yvideo in URLS.Items)
+                            {
+                                if (yvideo.Title == add.Title) marker = true;
+                            }
+                        }
+                        if(marker==false) URLS.Items.Add(add);
                     }
                     else rejected += target + "\n";
                 }
@@ -307,6 +315,21 @@ namespace YT2MP3
             }
             catch { }
             return null;
+        }
+
+        private void controllaclipboard(object sender, EventArgs e)
+        {
+            string appunti = Clipboard.GetText();
+            if ((appunti.Contains("youtube") || appunti.Contains("youtu.be")) && appunti.Contains("http"))
+            {
+                if (URL.Text == "Paste URL here")
+                    URL.Text = "";
+                if (appunti.StartsWith("http") && !URL.Text.Contains(appunti))
+                {
+                    URL.Text += "\n" + appunti + "\n";
+                    Clipboard.Clear();
+                }
+            }
         }
     }
 }

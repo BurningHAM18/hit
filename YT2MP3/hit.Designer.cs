@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(YTMP3));
             this.URLS = new System.Windows.Forms.ListBox();
             this.URL = new System.Windows.Forms.TextBox();
@@ -51,6 +52,7 @@
             this.s_button = new System.Windows.Forms.Button();
             this.tosearch = new System.Windows.Forms.TextBox();
             this.Player = new System.Windows.Forms.TabPage();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.tabs.SuspendLayout();
             this.Download.SuspendLayout();
             this.Search.SuspendLayout();
@@ -298,6 +300,11 @@
             this.Player.Text = "Player";
             this.Player.UseVisualStyleBackColor = true;
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.controllaclipboard);
+            // 
             // YTMP3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -342,6 +349,7 @@
         private System.Windows.Forms.Button s_button;
         private System.Windows.Forms.TextBox tosearch;
         private System.Windows.Forms.TabPage Player;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 
