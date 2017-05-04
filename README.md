@@ -6,7 +6,7 @@
 ### DESCRIPTION 
 
 _hit_ simply allows you to search and download (in a future maybe play) mp3 from YouTube.
-I am not responsable for copyright infringement, I recommend using it only to download unprotected songs, like "Il ragazzo del perù" di @cttynull
+I am not responsable for copyright infringement, I recommend using it only to download unprotected songs, like cttynul's "Il ragazzo del perù" 
 
 ![_hit_](http://i.imgur.com/wnObExE.png)
 
