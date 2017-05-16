@@ -23,10 +23,15 @@ Program/_hit_.exe
 
 ### THANKS 
 
--[flagbug](https://github.com/flagbug/YoutubeExtractor)
--[AydinAdn](https://github.com/AydinAdn/MediaToolkit)
--[mrklintsher](https://github.com/mrklintscher/YoutubeSearch)
--My friend [cttynul](https://github.com/cttynul) for his search implementation idea
--[chamedesign](https://www.iconfinder.com/chamedesign) and [madebyoliver](http://www.flaticon.com/authors/madebyoliver) for their icons
+-[flagbug](https://github.com/flagbug/YoutubeExtractor).
+
+-[AydinAdn](https://github.com/AydinAdn/MediaToolkit).
+
+-[mrklintsher](https://github.com/mrklintscher/YoutubeSearch).
+
+-My friend [cttynul](https://github.com/cttynul) for his search implementation idea.
+
+-[chamedesign](https://www.iconfinder.com/chamedesign) and [madebyoliver](http://www.flaticon.com/authors/madebyoliver) for their icons.
+
 
 ** Copyright (c) 2016, 2017 BurningHAM18  **
