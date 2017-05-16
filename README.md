@@ -1,4 +1,4 @@
-# _hit_
+﻿# _hit_
 
 
 
@@ -9,7 +9,7 @@ _hit_ simply allows you to search and download (in a future maybe play) mp3 from
 I am not responsable for copyright infringement, I recommend using it only to download unprotected songs, like cttynul's "Il ragazzo del perù" 
 
 ![_hit_](http://i.imgur.com/wnObExE.png)
-
+*new version has a different GUI*
 
 ### INSTALL 
 
@@ -27,6 +27,6 @@ Program/_hit_.exe
 -[AydinAdn](https://github.com/AydinAdn/MediaToolkit)
 -[mrklintsher](https://github.com/mrklintscher/YoutubeSearch)
 -My friend [cttynul](https://github.com/cttynul) for his search implementation idea
-
+-[chamedesign](https://www.iconfinder.com/chamedesign) and [madebyoliver](http://www.flaticon.com/authors/madebyoliver) for their icons
 
 ** Copyright (c) 2016, 2017 BurningHAM18  **
