@@ -33,7 +33,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Advanced MP3 Converter.ico</ApplicationIcon>
+    <ApplicationIcon>1494966199_15_youtube_video_player_play_logo_media.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup />
   <PropertyGroup />
@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="brain.cs" />
+    <Compile Include="Song.cs" />
     <Compile Include="YoutubeVideo.cs" />
     <Compile Include="hit.cs">
       <SubType>Form</SubType>
@@ -105,8 +106,52 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="1494966066_Social__YouTube.ico" />
+    <Content Include="1494966199_15_youtube_video_player_play_logo_media.ico" />
     <Content Include="Advanced MP3 Converter.ico" />
+    <None Include="icons\ONrepeat.png" />
+    <None Include="icons\ONshuffle.png" />
+    <None Include="icons\download.png" />
+    <None Include="icons\error.png" />
+    <None Include="icons\plus.png" />
+    <None Include="icons\binoculars.png" />
+    <Content Include="video-player-2.ico" />
+    <None Include="icons\shuffle.png" />
+    <None Include="icons\repeat.png" />
+    <None Include="icons\worldwide.png" />
+    <None Include="icons\video-player-2.png" />
+    <None Include="icons\stop.png" />
+    <None Include="icons\speaker-8.png" />
+    <None Include="icons\speaker-5.png" />
+    <None Include="icons\share-1.png" />
+    <None Include="icons\play-button.png" />
+    <None Include="icons\pause.png" />
+    <None Include="icons\next.png" />
+    <None Include="icons\multiply-1.png" />
+    <None Include="icons\minus.png" />
+    <None Include="icons\exit.png" />
+    <None Include="icons\back.png" />
+    <None Include="controls.jpg" />
     <Resource Include="version.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxAXVLC">
+      <Guid>{DF2BBE39-40A8-433B-A279-073F48DA94B6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="AXVLC">
+      <Guid>{DF2BBE39-40A8-433B-A279-073F48DA94B6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

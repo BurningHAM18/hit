@@ -21,7 +21,6 @@ namespace YT2MP3
         private string directoryPath = "";
         private static int version = 2;
         private static ProgressBar p;
-        private int count = 0;
 
         public YTMP3()
         {
@@ -67,7 +66,6 @@ namespace YT2MP3
                 else if (URLS.Items.Count == 0) MessageBox.Show("Cannot download the void, man");
                 else
                 {
-                    count = URLS.Items.Count;
                     MessageBox.Show("Have a sit and take a coffee, man");
                     foreach (YoutubeVideo item in URLS.Items)
                     {
@@ -87,7 +85,6 @@ namespace YT2MP3
                         if (!Directory.Exists(tempF)) Directory.CreateDirectory(tempF);
 
                         wc.DownloadProgressChanged += gestoreBarra;
-                        wc.DownloadFileCompleted += decreasecount;
                         wc.DownloadFileAsync(new Uri(string.Format("http://www.youtubeinmp3.com/fetch/?video={0}", link)), tempF + video.Title + ".mp3");
 
                     }
@@ -100,15 +97,9 @@ namespace YT2MP3
             URLS.Items.Clear();
         }
 
-        private void decreasecount(object sender, AsyncCompletedEventArgs e)
-        {
-            count--;
-            if(count==0) MessageBox.Show("Download finished, man");
-        }
-
         private void gestoreBarra(object sender, DownloadProgressChangedEventArgs e)
         {
-            progress.Value = e.ProgressPercentage;
+            progress.Value= e.ProgressPercentage;
         }
 
 

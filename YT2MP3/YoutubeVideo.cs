@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using YoutubeExtractor;
 using YoutubeSearch;
@@ -19,7 +21,7 @@ namespace YT2MP3
         {
             get
             {
-                return title;
+                return RemoveIllegalPathCharacters(title);
             }
 
             set
@@ -70,14 +72,14 @@ namespace YT2MP3
         public YoutubeVideo(VideoInformation info)
         {
             this.Info = info;
-            this.Title = info.Title;
+            this.Title = RemoveIllegalPathCharacters( info.Title);
             this.Url = info.Url;
             this.Duration = info.Duration;
         }
 
         public YoutubeVideo(string title, string url)
         {
-            this.Title = title;
+            this.Title = RemoveIllegalPathCharacters(title);
             string nuurl = url;
 
             if (url.StartsWith("https://youtu.be/"))
@@ -88,9 +90,16 @@ namespace YT2MP3
             this.Url = nuurl;
         }
 
+        private static string RemoveIllegalPathCharacters(string path)
+        {
+            string regexSearch = new string(Path.GetInvalidFileNameChars()) + new string(Path.GetInvalidPathChars());
+            var r = new Regex(string.Format("[{0}]", Regex.Escape(regexSearch)));
+            return r.Replace(path, "");
+        }
+
         public override string ToString()
         {
-            return Title + " - " + Duration;
+            return RemoveIllegalPathCharacters(Title) + " - " + Duration;
         }
 
         public string GetThumbnail()

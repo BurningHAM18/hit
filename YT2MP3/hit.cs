@@ -1,4 +1,5 @@
 ﻿
+using _hit_;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,10 +20,19 @@ namespace YT2MP3
     public partial class YTMP3 : Form
     {
         private string directoryPath = "";
-        private static int version = 2;
+        private string directorySongsPath = "";
+        private static int version = 3;
         private static ProgressBar p;
         private int count = 0;
-        
+
+        //
+
+
+        private int index=0;
+        private bool paused=false;
+        private bool shuffleEnabled = false;
+        private bool repeatOne = false;
+
         public YTMP3()
         {
             InitializeComponent();
@@ -42,7 +52,7 @@ namespace YT2MP3
             {
                 directoryPath = dir.SelectedPath;
                 directory.Enabled = false;
-                directory.Text = directoryPath;
+                directory.Text = directoryPath+"\\Dowloaded";
             }
         }
 
@@ -88,8 +98,12 @@ namespace YT2MP3
 
                         wc.DownloadProgressChanged += gestoreBarra;
                         wc.DownloadFileCompleted += decreasecount;
-                        wc.DownloadFileAsync(new Uri(string.Format("http://www.youtubeinmp3.com/fetch/?video={0}", link)), tempF + video.Title + ".mp3");
+                        //string nome = tempF + video.Title.Normalize();
+                        string nome = tempF + RemoveIllegalPathCharacters(video.Title);
 
+                        wc.DownloadFileAsync(new Uri(string.Format("http://www.youtubeinmp3.com/fetch/?video={0}", link)), nome + ".mp3");
+
+                        
                     }
                     //MessageBox.Show("Download finished, man");
                 }
@@ -185,15 +199,7 @@ namespace YT2MP3
                         VideoInfo video = videoInfos.First(info => info.VideoType == VideoType.Mp4); // youtube gives always mp4
 
                         YoutubeVideo add = new YoutubeVideo(video.Title, target);
-                        bool marker = false;
-                        if (URLS.Items.Count != 0)
-                        {
-                            foreach (YoutubeVideo yvideo in URLS.Items)
-                            {
-                                if (yvideo.Title == add.Title) marker = true;
-                            }
-                        }
-                        if(marker==false) URLS.Items.Add(add);
+                        URLS.Items.Add(add);
                     }
                     else rejected += target + "\n";
                 }
@@ -287,6 +293,7 @@ namespace YT2MP3
 
         private void mostrathumbnail(object sender, EventArgs e)
         {
+            /* DEPRECATO */
             WebClient wc = new WebClient();
             byte[] thumb = wc.DownloadData(((YoutubeVideo)risultati.SelectedItem).GetThumbnail());
             Image img = byteArrayToImage(thumb);
@@ -294,8 +301,15 @@ namespace YT2MP3
             Bitmap pannello = new Bitmap(img, new Size(323, 262));
             Search.BackgroundImage=background;
             panel1.BackgroundImage=pannello;
-
             
+
+            YoutubeVideo selected = (YoutubeVideo)risultati.SelectedItem;
+
+            if (player1.playlist.isPlaying) player1.playlist.stop();
+            player1.playlist.items.clear();
+            player1.playlist.add(selected.Url);
+
+
         }
 
         private void mouseDoubleClick(object sender, MouseEventArgs e)
@@ -316,19 +330,229 @@ namespace YT2MP3
             catch { }
             return null;
         }
+        
 
-        private void controllaclipboard(object sender, EventArgs e)
+        private void selectSongsPath_Click(object sender, EventArgs e)
         {
-            string appunti = Clipboard.GetText();
-            if ((appunti.Contains("youtube") || appunti.Contains("youtu.be")) && appunti.Contains("http"))
+            FolderBrowserDialog dir = new FolderBrowserDialog();
+
+            if (dir.ShowDialog() == DialogResult.OK)
             {
-                if (URL.Text == "Paste URL here")
-                    URL.Text = "";
-                if (appunti.StartsWith("http") && !URL.Text.Contains(appunti))
+                directorySongsPath = dir.SelectedPath;
+                songsPath.Enabled = false;
+                songsPath.Text = directorySongsPath;
+                loadSongs(songsPath.Text);
+            }
+        }
+
+        private void loadSongs(string songsPath)
+        {
+            string[] files = Directory.GetFiles(songsPath);
+            foreach(string s in files)
+            {
+                if (s.EndsWith(".mp3"))
                 {
-                    URL.Text += "\n" + appunti + "\n";
-                    Clipboard.Clear();
+                    Song song = new _hit_.Song(Path.GetFileNameWithoutExtension(s), "file:///"+s);
+                    songs.Items.Add(song);
                 }
+            }
+            if (songs.Items.Count > 0)
+            {
+                play.Enabled = true;
+                pause.Enabled = true;
+                next.Enabled = true;
+                previous.Enabled = true;
+                shuffle.Enabled = true;
+                repeat.Enabled = true;
+            }
+        }
+
+        private void vlc_play(string url)
+        {
+            if (player2.playlist.isPlaying) player2.playlist.stop();
+            player2.playlist.items.clear();
+            player2.playlist.add(url);
+            player2.playlist.play();
+        }
+
+
+        private void playSong(object sender, EventArgs e)
+        {
+            index = songs.SelectedIndex;
+            Song selected = (Song)songs.SelectedItem;
+            playingsong.Text = selected.Name;
+            vlc_play(selected.Url);
+            playingsong.Text = selected.Name;
+        }
+
+        private void resetLablePlaying(object sender, EventArgs e)
+        {
+            //playingsong.Text = "(none)";
+        }
+
+        private void SongEnded(object sender, EventArgs e)
+        {
+            if (repeatOne == false && shuffleEnabled == false) index++;
+            else if (repeatOne == false && shuffleEnabled == true)
+            {
+                Random r = new Random();
+                do { index = r.Next(0,songs.Items.Count); }
+                while (index >= songs.Items.Count);
+            }
+            if (index < songs.Items.Count)
+            {
+                Song selected = (Song)songs.Items[index];
+                songs.SelectedIndex = index;
+                playingsong.Text = selected.Name;
+                vlc_play(selected.Url);
+                playingsong.Text = selected.Name;
+            }
+            else
+            {
+                index = 0;
+                Song selected = (Song)songs.Items[0];
+                songs.SelectedIndex = 0;
+                playingsong.Text = selected.Name;
+                vlc_play(selected.Url);
+                playingsong.Text = selected.Name;
+            }
+        }
+
+        private void reloadSong(object sender, MouseEventArgs e)
+        {
+            index = songs.SelectedIndex;
+            Song selected = (Song)songs.SelectedItem;
+            playingsong.Text = selected.Name;
+            vlc_play(selected.Url);
+            playingsong.Text = selected.Name;
+        }
+
+        private void previousSong(object sender, MouseEventArgs e)
+        {
+            index--;
+            if (index >= 0)
+            {
+                Song selected = (Song)songs.Items[index];
+                songs.SelectedIndex = index;
+                playingsong.Text = selected.Name;
+                vlc_play(selected.Url);
+                playingsong.Text = selected.Name;
+            }
+            else
+            {
+                index = 0;
+                Song selected = (Song)songs.Items[0];
+                songs.SelectedIndex = index;
+                playingsong.Text = selected.Name;
+                vlc_play(selected.Url);
+                playingsong.Text = selected.Name;
+            }
+        }
+
+        private void playSong(object sender, MouseEventArgs e)
+        {
+            if (paused == false)
+            {
+                if(player2.playlist.isPlaying) player2.playlist.stop();
+
+                if (songs.SelectedItem != null)
+                {
+                    index = songs.SelectedIndex;
+                    Song selected = (Song)songs.SelectedItem;
+                    playingsong.Text = selected.Name;
+                    vlc_play(selected.Url);
+                    playingsong.Text = selected.Name;
+                }
+                else
+                {
+                    index = 0;
+                    Song selected = (Song)songs.Items[index];
+                    songs.SelectedIndex = index;
+                    playingsong.Text = selected.Name;
+                    vlc_play(selected.Url);
+                    playingsong.Text = selected.Name;
+                }
+            }
+            else
+            {
+                player2.playlist.togglePause();
+                paused = false;
+            }
+        }
+
+        private void pauseSong(object sender, MouseEventArgs e)
+        {
+            paused = true;
+            player2.playlist.pause();
+        }
+
+        private void nextSong(object sender, MouseEventArgs e)
+        {
+
+            if (shuffleEnabled==false) index++;
+            else if(shuffleEnabled == true)
+            {
+                Random r = new Random();
+                do { index = r.Next(0,songs.Items.Count); }
+                while (index >= songs.Items.Count);
+            }
+            if (index < songs.Items.Count)
+            {
+                
+                Song selected = (Song)songs.Items[index];
+                songs.SelectedIndex = index;
+                playingsong.Text = selected.Name;
+                vlc_play(selected.Url);
+                playingsong.Text = selected.Name;
+            }
+            else
+            {
+                index = 0;
+                Song selected = (Song)songs.Items[index];
+                songs.SelectedIndex = index;
+                playingsong.Text = selected.Name;
+                vlc_play(selected.Url);
+                playingsong.Text = selected.Name;
+            }
+        }
+
+       
+
+        private void shuffle_Paint(object sender, MouseEventArgs e)
+        {
+            if (shuffleEnabled == false)
+            {
+                shuffleEnabled = true;
+                shuffle.BackgroundImage = _hit_.Properties.Resources.ONshuffle;
+            }
+            else
+            {
+                shuffleEnabled = false;
+                shuffle.BackgroundImage = _hit_.Properties.Resources.shuffle;
+            }
+        }
+
+        private void repeat_Paint(object sender, MouseEventArgs e)
+        {
+            if (repeatOne == false)
+            {
+                repeatOne = true;
+                repeat.BackgroundImage = _hit_.Properties.Resources.ONrepeat;
+            }
+            else
+            {
+                repeatOne = false;
+                repeat.BackgroundImage = _hit_.Properties.Resources.repeat;
+            }
+        }
+
+        private void refreshSongs(object sender, EventArgs e)
+        {
+            if (!songsPath.Text.Equals(""))
+            {
+                songs.Items.Clear();
+                
+                loadSongs(songsPath.Text);
             }
         }
     }
