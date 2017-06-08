@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(YTMP3));
             this.URLS = new System.Windows.Forms.ListBox();
             this.URL = new System.Windows.Forms.TextBox();
@@ -52,6 +53,7 @@
             this.s_button = new System.Windows.Forms.Button();
             this.tosearch = new System.Windows.Forms.TextBox();
             this.Player = new System.Windows.Forms.TabPage();
+            this.refresh = new System.Windows.Forms.Panel();
             this.repeat = new System.Windows.Forms.Panel();
             this.next = new System.Windows.Forms.Panel();
             this.shuffle = new System.Windows.Forms.Panel();
@@ -65,7 +67,7 @@
             this.songsPath = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.player2 = new AxAXVLC.AxVLCPlugin2();
-            this.refresh = new System.Windows.Forms.Panel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.tabs.SuspendLayout();
             this.Download.SuspendLayout();
             this.Search.SuspendLayout();
@@ -344,6 +346,16 @@
             this.Player.Text = "Player";
             this.Player.UseVisualStyleBackColor = true;
             // 
+            // refresh
+            // 
+            this.refresh.BackgroundImage = global::_hit_.Properties.Resources.binoculars;
+            this.refresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.refresh.Location = new System.Drawing.Point(3, 2);
+            this.refresh.Name = "refresh";
+            this.refresh.Size = new System.Drawing.Size(29, 25);
+            this.refresh.TabIndex = 18;
+            this.refresh.Click += new System.EventHandler(this.refreshSongs);
+            // 
             // repeat
             // 
             this.repeat.BackgroundImage = global::_hit_.Properties.Resources.repeat;
@@ -484,15 +496,11 @@
             this.player2.MediaPlayerEndReached += new System.EventHandler(this.SongEnded);
             this.player2.MediaPlayerStopped += new System.EventHandler(this.resetLablePlaying);
             // 
-            // refresh
+            // timer1
             // 
-            this.refresh.BackgroundImage = global::_hit_.Properties.Resources.binoculars;
-            this.refresh.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.refresh.Location = new System.Drawing.Point(3, 2);
-            this.refresh.Name = "refresh";
-            this.refresh.Size = new System.Drawing.Size(29, 25);
-            this.refresh.TabIndex = 18;
-            this.refresh.Click += new System.EventHandler(this.refreshSongs);
+            this.timer1.Enabled = true;
+            this.timer1.Interval = 500;
+            this.timer1.Tick += new System.EventHandler(this.controllaclipboard);
             // 
             // YTMP3
             // 
@@ -560,6 +568,7 @@
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel refresh;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 

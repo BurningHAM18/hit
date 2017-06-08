@@ -37,6 +37,7 @@ namespace YT2MP3
         {
             InitializeComponent();
             brain b = new YT2MP3.brain(this);
+            timer1.Start();
         }
 
         private void eraseContent(object sender, EventArgs e)
@@ -53,6 +54,21 @@ namespace YT2MP3
                 directoryPath = dir.SelectedPath;
                 directory.Enabled = false;
                 directory.Text = directoryPath+"\\Dowloaded";
+            }
+        }
+
+        private void controllaclipboard(object sender, EventArgs e)
+        {
+            string appunti = Clipboard.GetText();
+            if ((appunti.Contains("youtube.com") || appunti.Contains("youtu.be")) && appunti.Contains("http"))
+            {
+                if (URL.Text == "Paste URL here")
+                    URL.Text = "";
+                if (appunti.StartsWith("http") && !URL.Text.Contains(appunti))
+                {
+                    URL.Text += "\n" + appunti + "\n";
+                    //Clipboard.Clear();
+                }
             }
         }
 
@@ -189,6 +205,7 @@ namespace YT2MP3
             }
             else
             {
+                Clipboard.Clear();
                 string[] targets = URL.Lines;
                 string rejected = "";
                 foreach (string target in targets)
@@ -203,6 +220,7 @@ namespace YT2MP3
                     }
                     else rejected += target + "\n";
                 }
+
                 URL.Text = rejected;
             }
             
@@ -307,8 +325,7 @@ namespace YT2MP3
 
             if (player1.playlist.isPlaying) player1.playlist.stop();
             player1.playlist.items.clear();
-            player1.playlist.add(selected.Url);
-
+            player1.playlist.add(selected.Url); 
 
         }
 
